@@ -1,0 +1,28 @@
+
+
+-----------------------------------------------------------------------------------------------
+Install phpmyadmin in AWS Ec2 instances
+
+Step 1 – Install phpmyadmin amazon ec2 ubuntu
+=> $ sudo apt install phpmyadmin -y
+
+Step 2 – Configure phpmyadmin in ubuntu ec2
+
+=> $ sudo vim /etc/apache2/apache2.conf
+=> $ Include /etc/phpmyadmin/apache.conf
+
+Step 3 – Enable MySQL root Login for phpmyadmin ubuntu aws
+
+=> $ sudo mysql -u root -p
+=> $ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+Note that, Replace password by the root password you entered while installing MySql.
+=> $ FLUSH PRIVILEGES;
+
+Step 4 – Restart Apache Web Server
+=> $ sudo service apache2 restart
+
+Step 5 – Access phpmyadmin Amazon ec2
+http://[SERVER_PUBLIC_IP]/phpmyadmin
+
+----------------------------------------------------------------------------------------------------
